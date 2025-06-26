@@ -1,1 +1,17 @@
-<router-outlet></router-outlet>
+<div class="layout">
+  <!-- Barra lateral -->
+  <nav class="sidebar">
+    <h2>Vending Manager</h2>
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active">🏠 Inicio</a></li>
+      <li><a routerLink="/reportes" routerLinkActive="active">📊 Reportes</a></li>
+      <li><a routerLink="/operaciones" routerLinkActive="active">⚙️ Operaciones</a></li>
+      <li><a routerLink="/configuracion" routerLinkActive="active">🔧 Configuración</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido dinámico -->
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

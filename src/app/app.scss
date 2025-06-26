@@ -1,0 +1,50 @@
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 1.5rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 1rem;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        display: block;
+        padding: 0.5rem;
+        border-radius: 6px;
+
+        &:hover {
+          background-color: #333;
+        }
+
+        &.active {
+          background-color: #555;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  overflow-y: auto;
+}
