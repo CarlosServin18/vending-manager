@@ -1,14 +1,14 @@
 <div class="layout">
-  <!-- Barra lateral -->
-  <nav class="sidebar" *ngIf="!isAuthRoute">
-    <h2>Vending Manager</h2>
-    <ul>
-      <li><a routerLink="/" routerLinkActive="active">🏠 Inicio</a></li>
-      <li><a routerLink="/reportes" routerLinkActive="active">📊 Reportes</a></li>
-      <li><a routerLink="/operaciones" routerLinkActive="active">⚙️ Operaciones</a></li>
-      <li><a routerLink="/configuracion" routerLinkActive="active">🔧 Configuración</a></li>
-    </ul>
-  </nav>
+  <!-- Barra lateral (solo si no es ruta auth) -->
+  <aside class="sidebar" *ngIf="!isAuthRoute">
+    <div class="brand">Vending Co.</div>
+    <nav class="menu">
+      <a routerLink="/" routerLinkActive="active">🏠 Inicio</a>
+      <a routerLink="/reportes" routerLinkActive="active">📊 Reportes</a>
+      <a routerLink="/operaciones" routerLinkActive="active">⚙️ Operaciones</a>
+      <a routerLink="/configuracion" routerLinkActive="active">🔧 Configuración</a>
+    </nav>
+  </aside>
 
   <!-- Contenido dinámico -->
   <main class="content">

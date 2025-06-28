@@ -1,50 +1,45 @@
 .layout {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .sidebar {
   width: 220px;
-  background-color: #1e1e1e;
-  color: white;
-  padding: 1.5rem;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+  border-right: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
 
-  h2 {
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-  }
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #222;
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
+.menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: #333;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
 
-    li {
-      margin-bottom: 1rem;
-
-      a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        display: block;
-        padding: 0.5rem;
-        border-radius: 6px;
-
-        &:hover {
-          background-color: #333;
-        }
-
-        &.active {
-          background-color: #555;
-        }
-      }
-    }
-  }
+.menu a.active,
+.menu a:hover {
+  background-color: #e0e0e0;
+  font-weight: 500;
 }
 
 .content {
-  flex-grow: 1;
+  flex: 1;
+  margin-left: 220px;
   padding: 2rem;
-  background-color: #f4f4f4;
-  overflow-y: auto;
+  background-color: #fff;
 }
