@@ -1,6 +1,6 @@
 <div class="layout">
   <!-- Barra lateral -->
-  <nav class="sidebar">
+  <nav class="sidebar" *ngIf="!isAuthRoute">
     <h2>Vending Manager</h2>
     <ul>
       <li><a routerLink="/" routerLinkActive="active">🏠 Inicio</a></li>
