@@ -17,7 +17,7 @@ export class LoginComponent {
 
   login() {
     if (this.username && this.password) {
-      this.router.navigate(['/']); // o a dashboard
+      this.router.navigate(['/inicio']);
     } else {
       alert('Datos incorrectos');
     }

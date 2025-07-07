@@ -3,6 +3,11 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
+    redirectTo: 'auth',
+    pathMatch: 'full'
+  },
+  {
+    path: 'inicio',
     loadChildren: () =>
       import('./features/inicio/inicio.module').then(m => m.InicioModule)
   },
