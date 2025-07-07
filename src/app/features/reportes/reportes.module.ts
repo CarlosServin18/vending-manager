@@ -5,6 +5,7 @@ import { ReportesRoutingModule } from './reportes-routing.module';
 import { Ventas } from './usuarios/pages/ventas/ventas';
 import { RouterModule } from '@angular/router';
 import { ReportesMenu } from './pages/menu/menu';
+import { Inventario } from '../inventario/pages/inventario/inventario';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ReportesMenu } from './pages/menu/menu';
     ReportesRoutingModule,
     Ventas,
     RouterModule,
-    ReportesMenu
+    ReportesMenu,
+    Inventario
   ]
 })
 export class ReportesModule { }
