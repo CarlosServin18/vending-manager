@@ -16,7 +16,7 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   login() {
-    if (this.username && this.password) {
+    if (this.username === 'admin' && this.password === 'admin') {
       this.router.navigate(['/inicio']);
     } else {
       alert('Datos incorrectos');

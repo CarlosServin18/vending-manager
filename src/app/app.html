@@ -4,11 +4,24 @@
     <div class="brand">Vending Co.</div>
     <nav class="menu">
       <a routerLink="/inicio" routerLinkActive="active">Inicio</a>
-      <a routerLink="/reportes" routerLinkActive="active">Reportes</a>
-      <a routerLink="/operaciones" routerLinkActive="active">Operaciones</a>
-      <a routerLink="/usuarios" routerLinkActive="active">Usuarios</a>
-      <a routerLink="/empleados" routerLinkActive="active">Empleados</a>
-      <a routerLink="/almacenes" routerLinkActive="active">Almacenes</a>
+
+      <div class="submenu">
+        <p class="section-title">Reportes</p>
+        <a routerLink="/reportes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Menú</a>
+        <a routerLink="/reportes/usuarios/ventas" routerLinkActive="active">Ventas</a>
+        <a routerLink="/reportes/usuarios/productos" routerLinkActive="active">Productos por usuario</a>
+        <a routerLink="/reportes/usuarios/usuarios" routerLinkActive="active">Usuarios</a>
+        <a routerLink="/reportes/vending/inventario" routerLinkActive="active">Inventario</a>
+      </div>
+
+      <div class="submenu">
+        <p class="section-title">Operaciones</p>
+        <a routerLink="/operaciones" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Menú</a>
+        <a routerLink="/operaciones/usuarios" routerLinkActive="active">Usuarios</a>
+        <a routerLink="/operaciones/empleados" routerLinkActive="active">Empleados</a>
+        <a routerLink="/operaciones/almacenes" routerLinkActive="active">Almacenes</a>
+      </div>
+
       <a routerLink="/configuracion" routerLinkActive="active">Configuración</a>
     </nav>
   </aside>
