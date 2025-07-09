@@ -21,15 +21,28 @@
   color: #222;
 }
 
-.menu a {
-  display: block;
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
-  text-decoration: none;
-  color: #333;
-  border-radius: 5px;
-  transition: background-color 0.2s;
-}
+  .menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+
+  .submenu {
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    margin: 0.5rem 1rem;
+    font-weight: bold;
+  }
+
+  .submenu a {
+    padding-left: 1.5rem;
+  }
 
 .menu a.active,
 .menu a:hover {
