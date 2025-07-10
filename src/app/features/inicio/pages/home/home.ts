@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
-export class Home {
+export class Home implements OnInit {
+  data: any;
 
+  constructor(private api: ApiService) {}
+
+  ngOnInit(): void {
+    this.api.get('/home').subscribe(d => (this.data = d));
+  }
 }
