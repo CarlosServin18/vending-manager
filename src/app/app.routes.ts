@@ -22,6 +22,11 @@ export const routes: Routes = [
       import('./features/operaciones/operaciones.module').then(m => m.OperacionesModule)
   },
   {
+    path: 'configuracion',
+    loadChildren: () =>
+      import('./features/configuracion/configuracion.module').then(m => m.ConfiguracionModule)
+  },
+  {
     path: 'auth',
     loadChildren: () =>
       import('./features/auth/auth/auth.module').then(m => m.AuthModule)
