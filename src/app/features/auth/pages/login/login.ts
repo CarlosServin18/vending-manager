@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -13,13 +14,15 @@ export class LoginComponent {
   username = '';
   password = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private api: ApiService) {}
 
   login() {
-    if (this.username === 'admin' && this.password === 'admin') {
-      this.router.navigate(['/inicio']);
-    } else {
-      alert('Datos incorrectos');
-    }
+    this.api.get('/login').subscribe(() => {
+      if (this.username === 'admin' && this.password === 'admin') {
+        this.router.navigate(['/inicio']);
+      } else {
+        alert('Datos incorrectos');
+      }
+    });
   }
 }
