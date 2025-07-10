@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { ReportesRoutingModule } from './reportes-routing.module';
 import { Ventas } from './usuarios/pages/ventas/ventas';
@@ -13,6 +14,7 @@ import { Inventario } from '../inventario/pages/inventario/inventario';
   imports: [
     CommonModule,
     ReportesRoutingModule,
+    FormsModule,
     Ventas,
     RouterModule,
     ReportesMenu,

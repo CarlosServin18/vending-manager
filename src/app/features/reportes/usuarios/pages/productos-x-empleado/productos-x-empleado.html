@@ -1,1 +1,7 @@
-<p>Que chinge a su puta madre ivan</p>
+<input type="text" placeholder="password" [(ngModel)]="filtro.password">
+<input type="text" placeholder="orden_venta" [(ngModel)]="filtro.orden">
+<input type="text" placeholder="celular" [(ngModel)]="filtro.celular">
+
+<button (click)="filtrarUsuarios()">Filtrar usuarios</button>
+
+<pre>{{ productos | json }}</pre>
