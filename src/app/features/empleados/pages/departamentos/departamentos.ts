@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
   selector: 'app-departamentos',
@@ -6,4 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './departamentos.html',
   styleUrl: './departamentos.scss'
 })
-export class Departamentos {}
+export class Departamentos implements OnInit {
+  data: unknown;
+
+  constructor(private api: ApiService) {}
+
+  ngOnInit(): void {
+    this.api.get('departamentos').subscribe(d => (this.data = d));
+  }
+}
