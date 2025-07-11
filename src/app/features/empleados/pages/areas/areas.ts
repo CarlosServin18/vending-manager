@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
   selector: 'app-areas',
@@ -6,4 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './areas.html',
   styleUrl: './areas.scss'
 })
-export class Areas {}
+export class Areas implements OnInit {
+  data: unknown;
+
+  constructor(private api: ApiService) {}
+
+  ngOnInit(): void {
+    this.api.get('areas').subscribe(d => (this.data = d));
+  }
+}
