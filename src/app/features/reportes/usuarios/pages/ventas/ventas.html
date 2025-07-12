@@ -4,41 +4,29 @@
   <form class="filtros">
     <label>
       Fecha inicio:
-      <input type="date" name="fechaInicio" />
+      <input type="text" name="fechaInicio" placeholder="password" [(ngModel)]="filtro.title" />
     </label>
     <label>
       Fecha fin:
-      <input type="date" name="fechaFin" />
+      <input type="text" name="orden" placeholder="orden" [(ngModel)]="filtro.body" />
     </label>
     <label>
       Usuario:
-      <input type="text" name="usuario" placeholder="Nombre del usuario" />
+      <input type="text" name="celular" placeholder="celular" [(ngModel)]="filtro.userId" />
     </label>
-    <button type="submit">Buscar</button>
+    <button (click)="ngOnInit()">Buscar</button>
   </form>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th>Usuario</th>
-        <th>Vending</th>
-        <th>Producto</th>
-        <th>Cantidad</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Aquí irán las ventas -->
-      <tr>
-        <td>2025-06-17</td>
-        <td>Carlos Servín</td>
-        <td>Vending #12</td>
-        <td>Coca-Cola</td>
-        <td>3</td>
-        <td>$36.00</td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="table">
+      
+      <tbody>
+        <tr *ngFor="let v of data">
+          <td>{{ v.title }}</td>
+          <td>{{ v.body }}</td>
+          <td>{{ v.userId }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
 </section>
 

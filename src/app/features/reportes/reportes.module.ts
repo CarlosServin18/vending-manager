@@ -6,7 +6,7 @@ import { Ventas } from './usuarios/pages/ventas/ventas';
 import { RouterModule } from '@angular/router';
 import { ReportesMenu } from './pages/menu/menu';
 import { Inventario } from '../inventario/pages/inventario/inventario';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -16,7 +16,8 @@ import { Inventario } from '../inventario/pages/inventario/inventario';
     Ventas,
     RouterModule,
     ReportesMenu,
-    Inventario
+    Inventario,
+    FormsModule
   ]
 })
 export class ReportesModule { }
