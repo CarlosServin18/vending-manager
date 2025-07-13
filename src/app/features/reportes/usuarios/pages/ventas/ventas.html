@@ -1,32 +1,46 @@
 <section class="ventas">
   <h1>Reporte de Ventas de Usuarios</h1>
-
+  <div class="ventas__actions">
+    <button class="btn-download" (click)="descargarCSV()">
+      📥 Descargar CSV
+    </button>
+  </div>
   <form class="filtros">
     <label>
-      Fecha inicio:
-      <input type="text" name="fechaInicio" placeholder="password" [(ngModel)]="filtro.title" />
+      Fecha:
+      <input type="date" name="fecha" placeholder="fecha" [(ngModel)]="filtro.fecha" />
     </label>
     <label>
-      Fecha fin:
-      <input type="text" name="orden" placeholder="orden" [(ngModel)]="filtro.body" />
+      Empleado:
+      <input type="text" name="empleado" placeholder="empleado" [(ngModel)]="filtro.empleado" />
     </label>
     <label>
-      Usuario:
-      <input type="text" name="celular" placeholder="celular" [(ngModel)]="filtro.userId" />
+      Departamento:
+      <input type="text" name="departamento" placeholder="departamento" [(ngModel)]="filtro.departamento" />
+    </label>
+    <label>
+      Producto:
+      <input type="text" name="producto" placeholder="producto" [(ngModel)]="filtro.producto" />
     </label>
     <button (click)="ngOnInit()">Buscar</button>
+    
   </form>
 
-    <table class="table">
-      
-      <tbody>
-        <tr *ngFor="let v of data">
-          <td>{{ v.title }}</td>
-          <td>{{ v.body }}</td>
-          <td>{{ v.userId }}</td>
-          
-        </tr>
-      </tbody>
-    </table>
+    <table *ngIf="data.length > 0" class="table">
+    <thead>
+      <tr>
+        <!-- Genera una <th> por cada columna -->
+        <th *ngFor="let col of columns">{{ col }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Por cada fila -->
+      <tr *ngFor="let row of data">
+        <!-- Por cada columna, mostramos row[col] -->
+        <td *ngFor="let col of columns">{{ row[col] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="data.length === 0">No hay resultados.</p>
 </section>
 

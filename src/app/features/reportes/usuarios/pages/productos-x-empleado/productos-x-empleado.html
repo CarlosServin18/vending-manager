@@ -1,1 +1,37 @@
-<p>Que chinge a su puta madre ivan</p>
+<section class="ventas">
+  <h1>Reporte por Productos</h1>
+  <div class="ventas__actions">
+    <button class="btn-download" (click)="descargarCSV()">
+      📥 Descargar CSV
+    </button>
+  </div>
+  <form class="filtros">
+    <label>
+      Empleado
+      <input type="text" name="empleado" placeholder="empleado" [(ngModel)]="filtro.Nombre" />
+    </label>
+    <label>
+      Producto:
+      <input type="text" name="producto" placeholder="producto" [(ngModel)]="filtro.producto" />
+    </label>
+    <button (click)="ngOnInit()">Buscar</button>
+  </form>
+
+    <table *ngIf="data.length > 0" class="table">
+    <thead>
+      <tr>
+        <!-- Genera una <th> por cada columna -->
+        <th *ngFor="let col of columns">{{ col }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Por cada fila -->
+      <tr *ngFor="let row of data">
+        <!-- Por cada columna, mostramos row[col] -->
+        <td *ngFor="let col of columns">{{ row[col] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="data.length === 0">No hay resultados.</p>
+</section>
+

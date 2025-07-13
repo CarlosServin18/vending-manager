@@ -1,5 +1,35 @@
-<section class="inventario">
+<section class="ventas">
   <h1>Inventario</h1>
-  <p>Inventario de vending
-  </p>
+  <div class="ventas__actions">
+    <button class="btn-download" (click)="descargarCSV()">
+      📥 Descargar CSV
+    </button>
+  </div>
+  <form class="filtros">
+    <label>
+      Vending:
+      <input type="text" name="vending" placeholder="vending" [(ngModel)]="filtro.vending_machine" />
+    </label>
+    
+    <button (click)="ngOnInit()">Buscar</button>
+    
+  </form>
+
+    <table *ngIf="data.length > 0" class="table">
+    <thead>
+      <tr>
+        <!-- Genera una <th> por cada columna -->
+        <th *ngFor="let col of columns">{{ col }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Por cada fila -->
+      <tr *ngFor="let row of data">
+        <!-- Por cada columna, mostramos row[col] -->
+        <td *ngFor="let col of columns">{{ row[col] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="data.length === 0">No hay resultados.</p>
 </section>
+
