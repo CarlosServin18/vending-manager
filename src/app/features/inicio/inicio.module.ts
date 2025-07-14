@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Home } from  './pages/home/home';
 import { InicioRoutingModule } from './inicio-routing.module';
 import { RouterModule } from '@angular/router';
+import { DashboardComponent} from '../dashboard/pages/main/main';
+
 
 @NgModule({
   declarations: [],
@@ -10,7 +12,10 @@ import { RouterModule } from '@angular/router';
     Home,
     CommonModule,
     InicioRoutingModule,
-    RouterModule
+    RouterModule,
+    DashboardComponent
+    
+  
   ]
 })
 export class InicioModule { }

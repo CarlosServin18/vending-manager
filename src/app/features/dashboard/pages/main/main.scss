@@ -1,0 +1,11 @@
+:host { 
+  display: block; 
+}
+div[chart] {
+  width: 100%;
+  height: 400px;    /* ó el alto que quieras */
+}
+svg {
+  width: 100%;
+  height: 100%;
+}
