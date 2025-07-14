@@ -22,20 +22,11 @@ export const routes: Routes = [
       import('./features/operaciones/operaciones.module').then(m => m.OperacionesModule)
   },
   {
-    path: 'usuarios',
+    path: 'administracion',
     loadChildren: () =>
-      import('./features/usuarios/usuarios.module').then(m => m.UsuariosModule)
+      import('./features/administracion/administracion.module').then(m => m.AdministracionModule)
   },
-  {
-    path: 'empleados',
-    loadChildren: () =>
-      import('./features/empleados/empleados.module').then(m => m.EmpleadosModule)
-  },
-  {
-    path: 'almacenes',
-    loadChildren: () =>
-      import('./features/almacenes/almacenes.module').then(m => m.AlmacenesModule)
-  },
+
   {
     path: 'auth',
     loadChildren: () =>
