@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsuariosModule } from './usuarios/usuarios.module';
-
 
 const routes: Routes = [
   {path: 'usuario_admin', loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule)},
@@ -13,4 +11,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ReportesRoutingModule { }
+export class AdministracionRoutingModule { }
