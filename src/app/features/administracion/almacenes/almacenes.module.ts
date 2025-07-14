@@ -10,7 +10,6 @@ import { Almacenes } from './pages/almacenes/almacenes';
   imports: [
     CommonModule,
     RouterModule,
-    Menu,
     Almacenes,
     AlmacenesRoutingModule
   ]

@@ -4,8 +4,7 @@ import { Menu } from '../menu/menu';
 import { Almacenes } from './pages/almacenes/almacenes';
 
 const routes: Routes = [
-  { path: '', component: Menu },
-  { path: 'almacenes', component: Almacenes },
+  { path: '', component: Almacenes },
 ];
 
 @NgModule({

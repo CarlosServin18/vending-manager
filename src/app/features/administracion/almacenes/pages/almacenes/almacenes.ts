@@ -4,7 +4,7 @@ import { ApiService } from '../../../../../services/api.service';
 
 
 @Component({
-  selector: 'app-operaciones-menu',
+  selector: 'app-alacenes',
   standalone: true,
   imports: [],
   templateUrl: './almacenes.html',
@@ -16,6 +16,6 @@ export class Almacenes implements OnInit {
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    this.api.get('operaciones-menu').subscribe(d => (this.data = d));
+    this.api.get('alamcenes').subscribe(d => (this.data = d));
   }
 }

@@ -6,7 +6,7 @@ import { ApiService } from '../../../../../services/api.service';
 @Component({
   selector: 'app-operaciones-menu',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './menu.html',
   styleUrl: './menu.scss'
 })
