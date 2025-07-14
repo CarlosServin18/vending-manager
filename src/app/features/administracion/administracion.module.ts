@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AdministracionRoutingModule } from 'administracion.module';
-import { AdministracionMenu } from './pages/menu/menu';
+import { AdministracionRoutingModule } from './administracion-routing.module';
 import { FormsModule } from '@angular/forms';
+import { AdministracionMenu } from './pages/menu/menu';
 
 @NgModule({
   declarations: [],
@@ -16,4 +16,3 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class AdministracionModule { }
-src\app\features\administracion\administracion-routing.module.ts

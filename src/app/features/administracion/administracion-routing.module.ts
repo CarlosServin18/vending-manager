@@ -1,16 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsuariosModule } from './usuarios/usuarios.module';
-
+import { AdministracionMenu } from './pages/menu/menu';
 
 const routes: Routes = [
-  {path: 'usuario_admin', loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule)},
-  {path: 'empleado_admin', loadChildren: () => import('./empleados/empleados.module').then(m => m.EmpleadosModule)},
-  {path: 'almacenes_admin', loadChildren: () => import('./almacenes/almacenes.module').then(m => m.AlmacenesModule)},
+  { path: '', component: AdministracionMenu },
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule)
+  },
+  {
+    path: 'empleados',
+    loadChildren: () => import('./empleados/empleados.module').then(m => m.EmpleadosModule)
+  },
+  {
+    path: 'almacenes',
+    loadChildren: () => import('./almacenes/almacenes.module').then(m => m.AlmacenesModule)
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ReportesRoutingModule { }
+export class AdministracionRoutingModule { }
