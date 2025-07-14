@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ApiService } from '../../../../../services/api.service';
+import { ApiService } from '../../../services/api.service';
 
 
 @Component({
-  selector: 'app-operaciones-menu',
+  selector: 'app-admin-menu',
   standalone: true,
   imports: [],
   templateUrl: './menu.html',

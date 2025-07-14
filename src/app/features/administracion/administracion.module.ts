@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AdministracionRoutingModule } from './administracion-routing.module';
 import { FormsModule } from '@angular/forms';
+import { Menu } from './menu/menu';
 
 @NgModule({
   declarations: [],
@@ -10,7 +11,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     AdministracionRoutingModule,
-    FormsModule
+    FormsModule,
+    Menu
   ]
 })
 export class AdministracionModule { }
