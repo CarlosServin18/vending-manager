@@ -4,8 +4,8 @@ import { Home } from './pages/home/home';
 import { DashboardComponent } from '../dashboard/pages/main/main';
 
 const routes: Routes = [
-  {path: '', component: Home},
-  {path: 'dashboard', component: DashboardComponent},
+  {path: 'inicio', component: Home},
+  {path: '', component: DashboardComponent},
 ];
 
 @NgModule({
