@@ -1,4 +1,44 @@
-<section class="resurtido">
-  <h1>Resurtido</h1>
-  <p>Registro y seguimiento de resurtido de productos.</p>
+<!-- src/app/features/operaciones/resurtir/resurtir.html -->
+<section class="resurtir">
+  <div class="header">
+    <h2>Resurtir Máquinas</h2>
+    <button class="save-btn" (click)="saveResurtir()">Guardar</button>
+  </div>
+
+  <div *ngIf="loading" class="loading">Cargando…</div>
+  <div *ngIf="error"   class="error">{{ error }}</div>
+
+  <div class="table-container" *ngIf="resurtirRecords.length">
+    <table class="resurtir-table">
+      <thead>
+        <tr>
+          <th>Vending</th>
+          <th>Producto</th>
+          <th>Fecha</th>
+          <th>Cantidad a resurtir</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of resurtirRecords">
+          <td>{{ r.vending_id }}</td>
+          <td>{{ r.producto_sku }}</td>
+          <td>
+            <input
+              type="date"
+              [(ngModel)]="r.fecha"
+              class="date-input"
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              [(ngModel)]="r.cantidad"
+              min="0"
+              class="num-input"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>

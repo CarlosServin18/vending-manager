@@ -1,3 +1,70 @@
-.resurtido {
-  padding: 2rem;
+/* src/app/features/operaciones/resurtir/resurtir.scss */
+.resurtir {
+  padding: 1rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h2 {
+      margin: 0;
+    }
+    .save-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      &:hover { background: #218838; }
+    }
+  }
+
+  .loading, .error {
+    text-align: center;
+    margin-bottom: 1rem;
+    &.error { color: #c00; }
+  }
+
+  .table-container {
+    overflow-x: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-radius: 0.5rem;
+    background: white;
+  }
+
+  .resurtir-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.9rem;
+
+    thead {
+      background: #343a40;
+      color: white;
+      th {
+        padding: 0.75rem;
+        text-transform: uppercase;
+      }
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid #e0e0e0;
+        &:hover { background: rgba(0,0,0,0.02); }
+      }
+      td {
+        padding: 0.6rem 1rem;
+        text-align: center;
+        input {
+          width: 100%;
+          padding: 0.3rem;
+          border: 1px solid #ccc;
+          border-radius: 0.25rem;
+        }
+      }
+    }
+  }
 }
