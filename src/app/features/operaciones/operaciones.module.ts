@@ -6,6 +6,9 @@ import { OperacionesMenu } from './pages/menu/menu';
 import { Planograma } from './pages/planograma/planograma';
 import { Resurtido } from './pages/resurtido/resurtido';
 import { Permisos } from './pages/permisos/permisos';
+import { FormsModule } from '@angular/forms';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 
 @NgModule({
   declarations: [],
@@ -16,7 +19,9 @@ import { Permisos } from './pages/permisos/permisos';
     Planograma,
     Resurtido,
     Permisos,
-    OperacionesRoutingModule
+    OperacionesRoutingModule,
+    FormsModule,
+    DragDropModule
   ]
 })
 export class OperacionesModule {}

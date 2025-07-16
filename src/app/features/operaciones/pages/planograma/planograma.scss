@@ -1,3 +1,197 @@
+/* src/app/features/operaciones/planograma/planograma-list/planograma-list.component.scss */
 .planograma {
-  padding: 2rem;
+  padding: 1rem;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .filter {
+      display: flex;
+      align-items: center;
+
+      label {
+        margin-right: 0.5rem;
+      }
+
+      select {
+        padding: 0.3rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+
+    .save-btn {
+      padding: 0.5rem 1rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #218838;
+      }
+    }
+  }
+
+  .loading {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .error {
+    color: #c00;
+    margin-bottom: 1rem;
+  }
+
+  .planogram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .slot {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.75rem;
+    cursor: move;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &.low {
+      background: #ffe5e5;
+      border-color: #f88;
+    }
+    &.medium {
+      background: #fff8e1;
+      border-color: #fc0;
+    }
+    &.high {
+      background: #e8f5e9;
+      border-color: #4caf50;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .slot-header {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .slot-body {
+      .sku {
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        width: 50px;
+        padding: 0.2rem;
+        border: 1px solid #bbb;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .table-container {
+  overflow-x: auto;              // para scroll horizontal en pantallas pequeñas
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 0.5rem;
+  background: white;
+}
+
+/* -----------------------------------------------
+   Tabla mejorada
+----------------------------------------------- */
+.planograma-table {
+  width: 100%;
+  border-collapse: separate;     // importante para border-radius en celdas
+  border-spacing: 0;
+  font-size: 0.9rem;
+  text-align: center;
+
+  thead {
+    background: #f7f7f7;
+    color: black;
+
+    th {
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      &:first-child {            // primera columna de encabezados
+        border-top-left-radius: 0.5rem;
+      }
+      &:last-child {
+        border-top-right-radius: 0.5rem;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #e0e0e0;
+
+      &:hover {
+        background: rgba(0, 123, 255, 0.05);
+      }
+    }
+
+    th {                           // cabecera de fila
+      background: #f7f7f7;
+      font-weight: 600;
+      padding: 0.75rem;
+      text-align: left;
+      width: 6rem;
+      border-right: 1px solid #e0e0e0;
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      position: relative;
+
+      &.empty {
+        background: #fafafa;
+      }
+
+      /* colores de stock, con !important para sobrescribir rows alternas */
+      &.low    { background: #fdecea !important; }
+      &.medium { background: #fff8e1 !important; }
+      &.high   { background: #e8f5e9 !important; }
+
+      input {
+        width: 3.5rem;
+        padding: 0.25rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .slot-header {
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    /* filas alternas suaves */
+    tr:nth-child(even) td:not(.low):not(.medium):not(.high) {
+      background: #fafafa;
+    }
+
+    /* esquina inferior redondeada */
+    tr:last-child {
+      td:first-child  { border-bottom-left-radius: 0.5rem; }
+      td:last-child   { border-bottom-right-radius: 0.5rem; }
+    }
+  }
+}
 }

@@ -1,4 +1,49 @@
 <section class="planograma">
-  <h1>Planograma</h1>
-  <p>Administración de planogramas para cada vending.</p>
+  <!-- HEADER: filtro + botón -->
+  <div class="header">
+    <div class="filter">
+      <label for="maquina">Filtrar por máquina:</label>
+      <select id="maquina" [(ngModel)]="filtroMaquina">
+        <option value="">Todas</option>
+        <option *ngFor="let m of maquinasUnicas" [value]="m">{{ m }}</option>
+      </select>
+    </div>
+    <button class="save-btn" (click)="saveLayout()">Guardar Layout</button>
+  </div>
+
+  <div *ngIf="loading" class="loading">Cargando…</div>
+  <div *ngIf="error"   class="error">{{ error }}</div>
+  <div class="table-container" *ngIf="filteredSlots.length">
+  <!-- TABLA del planograma -->
+  <table class="planograma-table" *ngIf="filteredSlots.length">
+    <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let c of columnas">Col {{ c }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let f of filas">
+        <tr>
+          <th>Fila {{ f }}</th>
+
+          <ng-container *ngFor="let c of columnas">
+            <td *ngIf="getSlot(f,c); else emptyCell"
+                [ngClass]="getStockClass(getSlot(f,c)!.cantidad)">
+              <div class="slot-header">#{{ getSlot(f,c)!.slot_id }}</div>
+              <div>{{ getSlot(f,c)!.producto_sku }}</div>
+              <input type="number"
+                     [(ngModel)]="getSlot(f,c)!.cantidad"
+                     min="0"/>
+            </td>
+          </ng-container>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  </div>
 </section>
+
+<ng-template #emptyCell>
+  <td class="empty"></td>
+</ng-template>

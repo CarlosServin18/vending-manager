@@ -23,4 +23,8 @@ export class ApiService {
   post<T>(path: string, body: unknown): Observable<T> {
     return this.http.post<T>(`${environment.apiUrl}/${path}`, body);
   }
+  
+  put<T>(path: string, body: unknown): Observable<T> {
+    return this.http.put<T>(`${environment.apiUrl}/${path}`, body);
+  }
 }
