@@ -1,11 +1,14 @@
 .login {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;      /* centra en eje horizontal */
+  justify-content: center;  /* centra en eje vertical */
+  min-height: 100vh;        /* ocupa toda la altura de la ventana */
   padding: 2rem;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 auto;           /* opcional, para mantenerla centrada si el ancho es menor */
 }
+
 
 .form {
   width: 100%;
@@ -34,4 +37,11 @@
   color: #666;
   font-size: 14px;
   text-decoration: underline;
+}
+
+/* Puedes poner esto en tu archivo de estilos correspondiente */
+.logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 250px; /* Ajusta el tamaño según tu imagen */
 }
